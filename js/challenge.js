@@ -19,12 +19,11 @@ form.addEventListener('submit', (e) =>{
 
 function createComment(value){
     
-    const comment = document.createElement('');
+    const comment = document.createElement('p');
     comment.textContent = value;
     list.appendChild(comment);    
 
 }
-
 
 plus.addEventListener('click', (e) =>{
     
@@ -47,7 +46,7 @@ minus.addEventListener('click', (e) =>{
 function minusClick(){
     
     ticker.textContent = --number
-    
+
 }
 
 
