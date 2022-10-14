@@ -1,57 +1,72 @@
-//code 
-
+// Declare variables
 const form = document.querySelector('form');
+const ticker = document.querySelector('#counter');
+let number = Number(ticker.textContent);
+const plus = document.querySelector('#plus');
+const minus = document.querySelector('#minus');
+const like = document.querySelector('#heart');
+const ul = document.querySelector('.likes');
+const list = document.querySelector('#list');
+
 
 form.addEventListener('submit', (e) =>{
+    
     e.preventDefault();
     createComment(e.target['comment-input'].value);
     form.reset();
+
 })
 
 function createComment(value){
-    const comment = document.createElement('p');
+    
+    const comment = document.createElement('');
     comment.textContent = value;
-    form.appendChild(comment);    
+    list.appendChild(comment);    
+
 }
 
-const ticker = document.querySelector('#counter');
-
-let number = Number(ticker.textContent);
-
-const plus = document.querySelector('#plus');
 
 plus.addEventListener('click', (e) =>{
-plusClick();
-//console.log('ouch!');
+    
+    plusClick();
+
 })
 
 function plusClick(){
+    
     ticker.textContent = ++number;
+
 };
 
-const minus = document.querySelector('#minus');
-    minus.addEventListener('click', (e) =>{
-        minusClick();
-        //console.log('touch!');
-    });
+minus.addEventListener('click', (e) =>{
+       
+    minusClick();
+        
+});
+
 function minusClick(){
-        if (number >=1){
-            ticker.textContent = --number
-        }
+    
+    ticker.textContent = --number
+    
 }
-const like = document.querySelector('#heart');
+
 
 like.addEventListener('click', (e) =>{
+    
     likeClick();
-    //console.log('ouchie!');
+    
 });
 
 function likeClick(){
-    const ul = document.querySelector('#likes');
-    const li = document.createElement('li');
-    let counter = 0
-    li.textContent = `${number} has been liked ${++counter} times`;
+
+    let counter = 1;
     
-    console.log();
-    ul.appendChild(li);
+    const li = document.createElement('li');
+    const str = `${number} is liked ${counter} time`;
+
+    li.append(str);
+    ul.append(li);
+
 };
+
+
